@@ -27,6 +27,3 @@ class TestPersonalAccountToDesigner():
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         checkout = driver.find_element(*Locators.CHECKOUT).text
         assert checkout == 'Оформить заказ'
-
-
-

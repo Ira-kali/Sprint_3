@@ -16,4 +16,3 @@ class TestLogout():
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.LOGIN_BUTTON))
         login_button = driver.find_element(*Locators.LOGIN_BUTTON).text
         assert login_button == 'Войти'
-
