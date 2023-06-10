@@ -1,11 +1,10 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import pytest
+
 from locators import Locators
 
 class TestPersonalAccountToDesigner():
     def test_personal_account_click_on_constructor(self, driver):
-        #pytest.set_trace()
         driver.find_element(*Locators.ACCOUNT_BUTTON).click()
         driver.find_element(*Locators.EMAIL).send_keys('ira_kalinina_10_111@mail.ru')
         driver.find_element(*Locators.PASSWORD).send_keys('123456')
