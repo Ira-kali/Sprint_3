@@ -10,33 +10,35 @@ class TestLogin():
         driver.find_element(*Locators.EMAIL).send_keys('ira_kalinina_10_111@mail.ru')
         driver.find_element(*Locators.PASSWORD).send_keys('123456')
         driver.find_element(*Locators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
-        checkout = driver.find_element(*Locators.CHECKOUT).text
-        assert checkout == 'Оформить заказ'
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.PERSONAL_ACCOUNT))
+        driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.HISTORY_ORDERS))
+        profile = driver.find_element(*Locators.PROFILE).text
+        assert profile == 'Профиль'
 
     def test_login_personal_account_button(self, driver):
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
         driver.find_element(*Locators.EMAIL).send_keys('ira_kalinina_10_111@mail.ru')
         driver.find_element(*Locators.PASSWORD).send_keys('123456')
         driver.find_element(*Locators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
-        checkout = driver.find_element(*Locators.CHECKOUT).text
-        assert checkout == 'Оформить заказ'
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.PERSONAL_ACCOUNT))
+        driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.HISTORY_ORDERS))
+        profile = driver.find_element(*Locators.PROFILE).text
+        assert profile == 'Профиль'
 
     def test_login_button_registration_form(self, driver):
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
         driver.find_element(*Locators.REG_BUTTON).click()
-        driver.find_element(*Locators.NAME).send_keys('Irina')
-        driver.find_element(*Locators.EMAIL).send_keys('ira_kalinina_10_899@mail.ru')
-        driver.find_element(*Locators.PASSWORD).send_keys('123456')
-        driver.find_element(*Locators.REGISTR_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.LOGIN_BUTTON))
+        driver.find_element(*Locators.RESTORE_LOGIN_BUTTON).click()
         driver.find_element(*Locators.EMAIL).send_keys('ira_kalinina_10_111@mail.ru')
         driver.find_element(*Locators.PASSWORD).send_keys('123456')
         driver.find_element(*Locators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
-        checkout = driver.find_element(*Locators.CHECKOUT).text
-        assert checkout == 'Оформить заказ'
+        driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.HISTORY_ORDERS))
+        profile = driver.find_element(*Locators.PROFILE).text
+        assert profile == 'Профиль'
 
     def test_login_password_recovery_button(self,driver):
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
@@ -46,5 +48,7 @@ class TestLogin():
         driver.find_element(*Locators.PASSWORD).send_keys('123456')
         driver.find_element(*Locators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
-        checkout = driver.find_element(*Locators.CHECKOUT).text
-        assert checkout == 'Оформить заказ'
+        driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.HISTORY_ORDERS))
+        profile = driver.find_element(*Locators.PROFILE).text
+        assert profile == 'Профиль'

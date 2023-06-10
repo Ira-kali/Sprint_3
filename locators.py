@@ -12,7 +12,7 @@ class Locators:
     ERROR_TEXT = (By.XPATH, "//p[@class='input__error text_type_main-default']") # Сообщение "Неверный пароль"
     ACCOUNT_BUTTON = (By.XPATH, "// button[text() = 'Войти в аккаунт']") # Кнопка "Войти в аккаунт"
     CHECKOUT = (By.XPATH, "//button[text()='Оформить заказ']") # Кнопка "Оформить заказ"
-    PASS_RECOVERY_BUTTON = (By.XPATH, "//a[@href = '/forgot-password']") #Кнопка "Восстановить пароль"
+    PASS_RECOVERY_BUTTON = (By.XPATH, "//a[@href = '/forgot-password']") # Кнопка "Восстановить пароль"
     RESTORE_BUTTON = (By.XPATH, "//button[contains(text(),'Восстановить')]") # Кнопка "Восстановить"
     RESTORE_LOGIN_BUTTON = (By.XPATH, "//a[contains(text(),'Войти')]") # Кнопка "Войти" в форме восстановления пароля
     PROFILE = (By.XPATH, "//a[text()='Профиль']") # Заголовок "Профиль"
@@ -22,3 +22,9 @@ class Locators:
     BUNS = (By.XPATH, "//span[contains(text(),'Булки')]") # Раздел "Булки"
     SAUCES = (By.XPATH, "//span[contains(text(),'Соусы')]") # Раздел  "Соусы"
     FILLINGS = (By.XPATH, "//span[contains(text(),'Начинки')]") # Раздел "Начинки"
+    BUN_R2_D3 = (By.XPATH, "//p[text()='Флюоресцентная булка R2-D3']") # Флюоресцентная булка R2-D3
+    SAUCE_GALAXY = (By.XPATH, "//p[text()='Соус традиционный галактический']") # Соус традиционный галактический
+    FILLING_CHEESE = (By.XPATH, "//p[text()='Сыр с астероидной плесенью']") # Сыр с астероидной плесенью
+    TEXT_INPUT = (By.XPATH, "//h2[text()='Вход']") # Текст "Вход"
+    ASSEMBLE_BURGER = (By.XPATH, "//h1[text()='Соберите бургер']") # Текст "Соберите бургер"
+    HISTORY_ORDERS = (By.XPATH, "//a[text()='История заказов']") # Заголовок "История заказов"
