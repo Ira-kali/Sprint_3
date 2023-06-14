@@ -37,8 +37,7 @@ class TestLogin():
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.HISTORY_ORDERS))
-        profile = driver.find_element(*Locators.PROFILE).text
-        assert profile == 'Профиль'
+        assert driver.current_url == 'https://stellarburgers.nomoreparties.site/account/profile'
 
     def test_login_password_recovery_button(self,driver):
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
@@ -50,5 +49,4 @@ class TestLogin():
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.HISTORY_ORDERS))
-        profile = driver.find_element(*Locators.PROFILE).text
-        assert profile == 'Профиль'
+        assert driver.current_url == 'https://stellarburgers.nomoreparties.site/account/profile'

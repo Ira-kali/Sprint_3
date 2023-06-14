@@ -12,9 +12,8 @@ class TestPersonalAccountToDesigner():
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
         driver.find_element(*Locators.DESIGNER).click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
-        assemble_burger = driver.find_element(*Locators.ASSEMBLE_BURGER).text
-        assert assemble_burger == 'Соберите бургер'
+        element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.ASSEMBLE_BURGER))
+        assert element, "Не видно"
 
     def test_personal_account_click_on_logo(self, driver):
         driver.find_element(*Locators.ACCOUNT_BUTTON).click()
@@ -26,4 +25,4 @@ class TestPersonalAccountToDesigner():
         driver.find_element(*Locators.LOGO).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         assemble_burger = driver.find_element(*Locators.ASSEMBLE_BURGER).text
-        assert assemble_burger == 'Соберите бургер'
+        assert len(assemble_burger) != 0

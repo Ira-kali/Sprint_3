@@ -22,9 +22,8 @@ class Locators:
     BUNS = (By.XPATH, "//span[contains(text(),'Булки')]") # Раздел "Булки"
     SAUCES = (By.XPATH, "//span[contains(text(),'Соусы')]") # Раздел  "Соусы"
     FILLINGS = (By.XPATH, "//span[contains(text(),'Начинки')]") # Раздел "Начинки"
-    BUN_R2_D3 = (By.XPATH, "//p[text()='Флюоресцентная булка R2-D3']") # Флюоресцентная булка R2-D3
-    SAUCE_GALAXY = (By.XPATH, "//p[text()='Соус традиционный галактический']") # Соус традиционный галактический
-    FILLING_CHEESE = (By.XPATH, "//p[text()='Сыр с астероидной плесенью']") # Сыр с астероидной плесенью
     TEXT_INPUT = (By.XPATH, "//h2[text()='Вход']") # Текст "Вход"
     ASSEMBLE_BURGER = (By.XPATH, "//h1[text()='Соберите бургер']") # Текст "Соберите бургер"
     HISTORY_ORDERS = (By.XPATH, "//a[text()='История заказов']") # Заголовок "История заказов"
+    CURRENT = (By.XPATH, "//div[contains(@class,'current')]//span")
+

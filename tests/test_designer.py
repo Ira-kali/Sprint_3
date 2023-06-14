@@ -12,8 +12,7 @@ class TestDesigner():
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         driver.find_element(*Locators.FILLINGS).click()
         driver.find_element(*Locators.BUNS).click()
-        buns = driver.find_element(*Locators.BUN_R2_D3).text
-        assert buns == 'Флюоресцентная булка R2-D3'
+        assert driver.find_element(*Locators.CURRENT).text == 'Булки'
 
 
     def test_sauces(self, driver):
@@ -23,8 +22,7 @@ class TestDesigner():
         driver.find_element(*Locators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         driver.find_element(*Locators.SAUCES).click()
-        sauces = driver.find_element(*Locators.SAUCE_GALAXY).text
-        assert sauces == 'Соус традиционный галактический'
+        assert driver.find_element(*Locators.CURRENT).text == 'Соусы'
 
     def test_fillings(self,driver):
         driver.find_element(*Locators.ACCOUNT_BUTTON).click()
@@ -33,5 +31,4 @@ class TestDesigner():
         driver.find_element(*Locators.LOGIN_BUTTON).click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Locators.CHECKOUT))
         driver.find_element(*Locators.FILLINGS).click()
-        fillings = driver.find_element(*Locators.FILLING_CHEESE).text
-        assert fillings == 'Сыр с астероидной плесенью'
+        assert driver.find_element(*Locators.CURRENT).text == 'Начинки'
